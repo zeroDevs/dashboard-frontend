@@ -1,0 +1,56 @@
+.title-l{
+	font-size: 6em;
+}
+
+.title-m{
+	font-size: 2.4em;
+}
+
+.text-wrapper {
+    text-align: center;
+}
+
+.nav-col {
+    color:#ffc30f;
+    font-size: 1.1em;
+    font-family: calibri;
+}
+
+.burger-col{
+    color: #000000;
+    border: 10px;
+}
+
+.is-active{
+    /* font-weight: bold; */
+}
+
+.hero-bg {
+	background-color: rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 22%;
+}
+
+.hero-img {
+    /* background-image: url('../../assets/profile.png'); */
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 10%;
+}
+
+.hero.is-info {
+	color: #000000;
+}
+
+.top-margin-navbar {
+	margin-top: 15px;
+    size: 2em;
+}
+
+.is-transparent {
+	background-color: #36363600;
+	color: antiquewhite;
+}
