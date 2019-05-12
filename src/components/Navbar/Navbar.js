@@ -59,9 +59,9 @@ class Navbar extends Component {
 							About
 						</Link>
 
-							<Link to="/support" className="navbar-item">
-								Support
-							</Link>
+						<Link to="/support" className="navbar-item">
+							Support
+						</Link>
 
 						<div className="navbar-item">
 							<div className="buttons">
