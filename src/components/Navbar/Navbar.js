@@ -38,53 +38,43 @@ class Navbar extends Component {
 
 		return(
 			
-			<nav className="navbar is-transparent is-fixed-top">
+			<nav className="navbar is-primary is-fixed-top">
 				<div className="navbar-brand">
-					<Link to="/" className="navbar-item title">
+					<Link to="/" className="navbar-item">
 						upTimer
 					</Link>
 
-					{/* <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"> */}
 					<span className="navbar-burger burger" data-target="navbarItems">
 						<span aria-hidden="true"></span>
 						<span aria-hidden="true"></span>
 						<span aria-hidden="true"></span>
 					</span>
-					{/* </a> */}
 				</div>
 
 				<div id="navbarItems" className="navbar-menu">
 
-					<div className="navbar-end top-margin-navbar">
+					<div className="navbar-end top-margin-navbar nav-col">
 
-						<Link to="/about" className="navbar-item nav-col">												
-										About
+						<Link to="/about" className="navbar-item">
+							About
 						</Link>
 
-							<Scroll type="id" element="faq" timeout={80}>
-								<Link to="/faq" className="navbar-item nav-col" id="skillId">
-									FAQ
+							<Link to="/support" className="navbar-item">
+								Support
+							</Link>
+
+						<div className="navbar-item">
+							<div className="buttons">
+								<Link to="/signup" className="button is-warning">
+									<strong>Sign up</strong>
 								</Link>
-							</Scroll>
-
-							<Scroll type="id" element="support" timeout={80}>
-								<a href="#faq" className="navbar-item onC nav-col">
-									Support
-								</a>
-							</Scroll>
-
-							<div className="navbar-item">
-								<div className="buttons">
-									<Link to="/signup" className="button is-primary">
-										<strong>Sign up</strong>
-									</Link>
-									<a className="button is-transparent">
-										Log in
-									</a>
-								</div>
+								<Link to="/login" className="button is-transp">
+									Log in
+								</Link>
 							</div>
-
 						</div>
+
+					</div>
 
 				</div>
 			</nav>
