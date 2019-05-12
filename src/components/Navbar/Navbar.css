@@ -13,16 +13,13 @@
 .nav-col {
     color:#ffc30f;
     font-size: 1.1em;
+    font-weight: bold;
     font-family: calibri;
 }
 
 .burger-col{
     color: #000000;
     border: 10px;
-}
-
-.is-active{
-    /* font-weight: bold; */
 }
 
 .hero-bg {

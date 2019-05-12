@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import 'bulma/css/bulma.css';
 import Scroll from 'react-scroll-to-element';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -36,70 +37,58 @@ class Navbar extends Component {
 
 
 		return(
+			
+			<nav className="navbar is-transparent is-fixed-top">
+				<div className="navbar-brand">
+					<Link to="/" className="navbar-item title">
+						upTimer
+					</Link>
 
-				<div className="has-text-centered">
-					<section className="hero is-large hero-img is-dark" id="home">
-						  <div className="hero-head">
-						    <nav className="navbar is-fixed-top is-transparent">
-						      <div className="container">
-						        <div className="navbar-brand">
-						          <span className="navbar-burger burger" data-target="navbarMenuHeroB">
-						            <span></span>
-						            <span></span>
-						            <span></span>
-						          </span>
-						        </div>
-						        <div id="navbarMenuHeroB" className="navbar-menu">
-					        	<div className="navbar-end nav-col top-margin-navbar">
-
-					            	<Scroll type="id" element="about" timeout={80}>
-													<a href="#about" className="navbar-item onC is-active" id="aboutId">
-														About
-													</a>
-												</Scroll>
-
-												<Scroll type="id" element="skills" timeout={80}>
-													<a href="#skills" className="navbar-item onC is-active" id="skillId">
-														FAQ
-													</a>
-												</Scroll>
-
-												<Scroll type="id" element="proj" timeout={80}>
-													<a href="#projects" className="navbar-item onC is-active" id="projId">
-														Support
-													</a>
-												</Scroll>
-
-												<div className="navbar-item">
-													<div className="buttons">
-														<a className="button is-primary">
-															<strong>Sign up</strong>
-														</a>
-														<a className="button is-transparent">
-															Log in
-														</a>
-													</div>
-												</div>
-
-						        </div>
-						        </div>
-						      </div>
-						    </nav>
-						  </div>
-
-						  <div className="hero-body hero-bg">
-						  <div className="hero-bg-overlay">
-						    <div className="container has-text-centered">
-						      <h1 className="title title-l">
-						        UpTimer
-						      </h1>
-									<h1 className="title" style={{color: "#00d1b2"}}>Get Notified during DownTime FOR FREE !!*</h1>
-									<h6>*only for premium accounts</h6>
-						    </div>
-						    </div>
-						  </div>
-					</section>
+					{/* <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"> */}
+					<span className="navbar-burger burger" data-target="navbarItems">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</span>
+					{/* </a> */}
 				</div>
+
+				<div id="navbarItems" className="navbar-menu">
+
+					<div className="navbar-end top-margin-navbar">
+
+						<Link to="/about" className="navbar-item nav-col">												
+										About
+						</Link>
+
+							<Scroll type="id" element="faq" timeout={80}>
+								<Link to="/faq" className="navbar-item nav-col" id="skillId">
+									FAQ
+								</Link>
+							</Scroll>
+
+							<Scroll type="id" element="support" timeout={80}>
+								<a href="#faq" className="navbar-item onC nav-col">
+									Support
+								</a>
+							</Scroll>
+
+							<div className="navbar-item">
+								<div className="buttons">
+									<Link to="/signup" className="button is-primary">
+										<strong>Sign up</strong>
+									</Link>
+									<a className="button is-transparent">
+										Log in
+									</a>
+								</div>
+							</div>
+
+						</div>
+
+				</div>
+			</nav>
+
 			);
 	}
 }
