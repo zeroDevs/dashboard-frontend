@@ -9,6 +9,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import SignUp from './components/SignUp';
 import Login from './components/Login/Login';
+import Dashboard from './components/Dashboard/Dashboard';
 import Footer from './components/Footer';
 
 import store from './store';
@@ -25,6 +26,7 @@ class App extends Component {
 							<Route exact path="/about" component={About} />
 							<Route exact path="/signup" component={SignUp} />
 							<Route exact path="/login" component={Login} />
+							<Route exact path="/dashboard" component={Dashboard} />
 						</Switch>
 						<Footer />
 					</div>

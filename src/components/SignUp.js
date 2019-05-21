@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 class SignUp extends Component {
 	render() {
 		return(
-			<section class="section is-large">
-				<div class="container has-text-centered">
+			<section className="section is-large">
+				<div className="container has-text-centered">
 					<marquee behavior="scroll" direction="up">SignUp not enabled</marquee>
-					<marquee><h1 class="title title-m">SignUp not enabled</h1></marquee>
+					<marquee><h1 className="title title-m">SignUp not enabled</h1></marquee>
 					<marquee behavior="scroll" direction="up">SignUp not enabled</marquee>
 
 					<marquee behavior="scroll" direction="left" scrollamount="3">SignUp not enabled</marquee>
@@ -26,7 +26,7 @@ class SignUp extends Component {
         	<marquee style={{zIndex: 2, position: 'absolute', left: '66%', top: '10%', fontFamily: 'Cursive', fontSize: '14pt', color: '#ffcc00', height: '371px'}} scrollamount={3} direction="down">SignUp not enabled</marquee>
         	<marquee style={{zIndex: 2, position: 'absolute', left: '36%', top: '5%', fontFamily: 'Cursive', fontSize: '14pt', color: '#ffcc00', height: '317px'}} scrollamount={2} direction="down">SignUp not enabled</marquee>
 
-  
+
 				</div>
 			</section>
 		);

@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import 'bulma/css/bulma.css';
 import Scroll from 'react-scroll-to-element';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import './Navbar.css';
+import PreLogin from './PreLogin';
+import PostLogin from './PostLogin';
 
 class Navbar extends Component {
 
-	render() {
+	componentDidMount() {
 
+	}
+
+	render() {
 
 		document.addEventListener('DOMContentLoaded', () => {
 
@@ -37,8 +45,8 @@ class Navbar extends Component {
 
 
 		return(
-			
-			<nav className="navbar is-primary is-fixed-top">
+
+			<nav className="navbar is-primary">
 				<div className="navbar-brand">
 					<Link to="/" className="navbar-item">
 						upTimer
@@ -51,36 +59,26 @@ class Navbar extends Component {
 					</span>
 				</div>
 
-				<div id="navbarItems" className="navbar-menu">
+				{
+					this.props.isLoggedIn
+					?
+					(<PostLogin />)
+					:
+					(<PreLogin />)
+				}
 
-					<div className="navbar-end top-margin-navbar nav-col">
-
-						<Link to="/about" className="navbar-item">
-							About
-						</Link>
-
-						<Link to="/support" className="navbar-item">
-							Support
-						</Link>
-
-						<div className="navbar-item">
-							<div className="buttons">
-								<Link to="/signup" className="button is-warning">
-									<strong>Sign up</strong>
-								</Link>
-								<Link to="/login" className="button is-transp">
-									Log in
-								</Link>
-							</div>
-						</div>
-
-					</div>
-
-				</div>
 			</nav>
 
 			);
 	}
 }
 
-export default Navbar;
+Navbar.propTypes = {
+    isLoggedIn: PropTypes.bool.isRequired
+};
+
+const mapStateToProps = state => ({
+	isLoggedIn: state.auth.isLoggedIn
+})
+
+export default connect(mapStateToProps)(Navbar);
