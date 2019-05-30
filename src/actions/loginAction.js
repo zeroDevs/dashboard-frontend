@@ -1,7 +1,7 @@
 import { LOGIN, USER_PROFILE } from './types';
 
 export const loginUser = (lData, handleRedirect) => dispatch => {
-	fetch('http://localhost:5000/api/login', {
+	fetch('http://54.213.184.110:5000/api/login', {
 		method: 'POST',
 		headers: {
 			'content-type': 'application/json'
@@ -26,7 +26,7 @@ export const loginUser = (lData, handleRedirect) => dispatch => {
 
 export const fetchProfile = (username, token) => dispatch => {
 	const bearer = 'Bearer ' + token;
-	fetch(`http://localhost:5000/api/${username}/profile`, {
+	fetch(`http://54.213.184.110:5000/api/${username}/profile`, {
 		method: 'POST',
 		headers: {
 			'Authorization': bearer,
