@@ -18,7 +18,7 @@ import store from './store';
 class App extends Component {
 
 	componentDidMount() {
-		const socket = socketIOClient("http://localhost:5000/");
+		//const socket = socketIOClient("http://localhost:5000/");
 		socket.on("FromAPI", data => console.log(data));
 	}
 
