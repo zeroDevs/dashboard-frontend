@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RTChart from 'react-rt-chart';
 import socketIOClient from "socket.io-client";
-import '../../node_modules/c3/c3.css';
+import '../c3.css';
 import './Dashboard/Dashboard.css';
 
 class Chart extends Component {
