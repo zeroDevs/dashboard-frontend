@@ -1,5 +1,4 @@
 import { LOGIN, USER_PROFILE } from './types';
-import Cookies from 'universal-cookie';
 
 export const loginUser = (lData, handleRedirect) => dispatch => {
 	fetch('http://localhost:5000/api/login', {
