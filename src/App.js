@@ -10,17 +10,12 @@ import About from './components/About';
 import SignUp from './components/SignUp';
 import Login from './components/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard';
+import PlayStore from './components/PlayStore';
 import Footer from './components/Footer';
-// import socketIOClient from "socket.io-client";
 
 import store from './store';
 
 class App extends Component {
-
-	componentDidMount() {
-		//const socket = socketIOClient("http://localhost:5000/");
-		//socket.on("FromAPI", data => console.log(data));
-	}
 
 	render() {
 		return (
@@ -35,6 +30,7 @@ class App extends Component {
 							<Route exact path="/login" component={Login} />
 							<Route exact path="/dashboard" component={Dashboard} />
 						</Switch>
+						<PlayStore />
 						<Footer />
 					</div>
 				</Router>

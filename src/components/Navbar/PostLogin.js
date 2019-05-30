@@ -26,12 +26,12 @@ class PostLogin extends Component {
                                 this.props.isLoggedIn && this.props.profile.result !== undefined
                                     ? (
                                             <figure className="image is-48x48 navbar-item">
-                                                <img className="is-rounded sizer" src={this.props.profile.result.avatar} />
+                                                <img className="is-rounded" src={this.props.profile.result.avatar} />
                                             </figure>
                                       )
                                     : (
-                                        <figure className="image is-48x48">
-                                            <img className="is-rounded sizer" src="https://bulma.io/images/placeholders/128x128.png" />
+                                        <figure className="image is-48x48 navbar-item">
+                                            <img className="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" />
                                         </figure>
                                       )
                             }
