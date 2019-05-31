@@ -15,8 +15,11 @@ class Chart extends Component {
 
 	componentDidMount() {
 		// setInterval(() => this.forceUpdate(), 30000);
-		const socket = socketIOClient("https://apiup.ankuranant.me/");
-		socket.on("FromAPI", data => this.setState({serverData: data}));
+		const socket = socketIOClient("ws://apiup.ankuranant.me/", {transports: ['polling']});
+		socket.on("FromAPI", data => {
+			console.log(data);
+			this.setState({serverData: data})
+		});
 		
 	}
 
@@ -64,12 +67,12 @@ class Chart extends Component {
 					      				this.state.serverData[0].status == 200
 					      					? (
 					      						<p className="has-text-success">
-					      							<bold>{this.state.serverData[0].status}</bold>
+					      							<b>{this.state.serverData[0].status}</b>
 					      						</p>
 					      						)
 					      					: (
 					      						<p className="has-text-danger">
-					      							<bold>{this.state.serverData[0].status}</bold>
+					      							<b>{this.state.serverData[0].status}</b>
 					      						</p>
 					      						)
 					      			}
@@ -96,12 +99,12 @@ class Chart extends Component {
 					      				this.state.serverData[1].status == 200
 					      					? (
 					      						<p className="has-text-success">
-					      							<bold>{this.state.serverData[1].status}</bold>
+					      							<b>{this.state.serverData[1].status}</b>
 					      						</p>
 					      						)
 					      					: (
 					      						<p className="has-text-danger">
-					      							<bold>{this.state.serverData[1].status}</bold>
+					      							<b>{this.state.serverData[1].status}</b>
 					      						</p>
 					      						)
 					      			}
