@@ -15,7 +15,7 @@ class Chart extends Component {
 
 	componentDidMount() {
 		// setInterval(() => this.forceUpdate(), 30000);
-		const socket = socketIOClient("http://54.213.184.110:5000/");
+		const socket = socketIOClient("https://apiup.ankuranant.me/");
 		socket.on("FromAPI", data => this.setState({serverData: data}));
 		
 	}
