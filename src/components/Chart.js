@@ -49,7 +49,7 @@ class Chart extends Component {
 					  		<tr>
 					      		<th>
 					      		{
-					      			this.state.serverData[0].name == undefined
+					      			this.state.serverData[0].name === undefined
 					      				? (
 					      					<div className="balls">
 											  	<div></div>
@@ -64,7 +64,7 @@ class Chart extends Component {
 					      		</th>
 					      		<td>
 					      			{
-					      				this.state.serverData[0].status == 200
+					      				this.state.serverData[0].status === 200
 					      					? (
 					      						<p className="has-text-success">
 					      							<b>{this.state.serverData[0].status}</b>
@@ -81,7 +81,7 @@ class Chart extends Component {
 					    	<tr>
 					      		<th>
 					      			{
-						      			this.state.serverData[1].name == undefined
+						      			this.state.serverData[1].name === undefined
 						      				? (
 						      					<div className="balls">
 												  	<div></div>
@@ -96,7 +96,7 @@ class Chart extends Component {
 				      			</th>
 					      		<td>
 					      			{
-					      				this.state.serverData[1].status == 200
+					      				this.state.serverData[1].status === 200
 					      					? (
 					      						<p className="has-text-success">
 					      							<b>{this.state.serverData[1].status}</b>
