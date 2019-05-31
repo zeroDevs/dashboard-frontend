@@ -15,7 +15,7 @@ class Chart extends Component {
 
 	componentDidMount() {
 		// setInterval(() => this.forceUpdate(), 30000);
-		const socket = socketIOClient("ws://apiup.ankuranant.me/", {transports: ['polling']});
+		const socket = socketIOClient("https://apiup.ankuranant.me/");
 		socket.on("FromAPI", data => {
 			console.log(data);
 			this.setState({serverData: data})
