@@ -20,7 +20,7 @@ class Chart extends Component {
 			console.log(data);
 			this.setState({serverData: data})
 		});
-		
+
 	}
 
 	render() {
@@ -112,6 +112,7 @@ class Chart extends Component {
 					    	</tr>
 					  	</tbody>
 					</table>
+					<p>{localStorage.getItem('token')}</p>
 				</div>
 			);
 	}

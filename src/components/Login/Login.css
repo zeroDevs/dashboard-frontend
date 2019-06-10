@@ -22,7 +22,7 @@
 #login .login-card .content {
 	padding: 3rem 2.5rem 5rem;
 }
-#login .login-card #username, #login .login-card #password {
+#login .login-card #username, #login .login-card #password, #login .login-card #passwordCheck, #login .login-card #token {
 	display: block;
 	width: 100%;
 	font-size: 1rem;
@@ -32,10 +32,17 @@
 	border-bottom: 1px solid #dbdbdb;
 	transition: all 0.5s;
 }
-#login .login-card #username:hover, #login .login-card #password:hover {
+#login .login-card #username:hover, #login .login-card #password:hover, #login .login-card #passwordCheck:hover, #login .login-card #token:hover {
 	border-color: #7a7a7a;
 }
-#login .login-card #username:active, #login .login-card #password:active, #login .login-card #username:focus, #login .login-card #password:focus {
+#login .login-card #username:active,
+#login .login-card #password:active,
+#login .login-card #passwordCheck:active,
+#login .login-card #token:active,
+#login .login-card #username:focus,
+#login .login-card #password:focus
+#login .login-card #passwordCheck:focus
+#login .login-card #token:focus {
 	border-color: #00d1b2;
 }
 #login .login-card .checkbox {
