@@ -1,8 +1,8 @@
 import { PRESIGNUP, SIGNUP } from '../actions/types.js';
 
 const initialState = {
-    tokVer: false,
-    su: false
+    tokVer: {},
+    su: {}
 }
 
 export default(state=initialState, action) => {
@@ -10,12 +10,12 @@ export default(state=initialState, action) => {
         case PRESIGNUP:
             return {
                 ...state,
-                tokVer: action.payload.tokVer
+                tokVer: action.payload
             }
         case SIGNUP:
             return {
                 ...state,
-                su: action.payload.su
+                su: action.payload
             }
         default:
             return state;

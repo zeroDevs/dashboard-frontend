@@ -20,7 +20,6 @@ export const preSignup = (inpData) => dispatch => {
 
 export const userSignup = (userData, signUpToken, handleRedirect) => dispatch => {
     const vToken = 'Bearer ' + signUpToken;
-    console.log(vToken);
     fetch('https://apiup.ankuranant.me/api/signup', {
         method: 'POST',
         headers: {
@@ -31,6 +30,7 @@ export const userSignup = (userData, signUpToken, handleRedirect) => dispatch =>
     })
         .then(res => res.json())
         .then(data => {
+            console.log(data);
             dispatch({
                 type: SIGNUP,
                 payload: data

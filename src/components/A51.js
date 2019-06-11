@@ -22,6 +22,64 @@ class A51 extends Component {
 		this.handleRedirect = this.handleRedirect.bind(this);
 	}
 
+	componentDidUpdate(prevProps) {
+		console.log(this.props.tokVer.error === prevProps.tokVer.error);
+		if(this.props.tokVer.error !== undefined) {
+			if(this.props.tokVer.error !== prevProps.tokVer.error) {
+				let tokForm = document.getElementById('suForm');
+	            let tokenErr = document.createElement("h6");
+	            tokenErr.innerHTML = `Error: ${this.props.tokVer.error}`;
+	            tokenErr.style.color = 'red';
+				tokenErr.setAttribute("id", "tokenErr");
+				tokenErr.style.textAlign = 'center';
+				tokForm.appendChild(document.createElement("br"));
+	            tokForm.appendChild(tokenErr);
+
+	            let tokenCode = document.createElement("h6");
+	            tokenCode.innerHTML = `Code: ${this.props.tokVer.code}`;
+	            tokenCode.style.color = 'red';
+				tokenCode.setAttribute("id", "tokenCode");
+				tokenCode.style.textAlign = 'center';
+	            tokForm.appendChild(tokenCode);
+			} else {
+				let prevTokenErr = document.getElementById('tokenErr');
+				prevTokenErr.innerHTML = `Error: ${this.props.tokVer.error}`;
+				let prevTokenCode = document.getElementById('tokenCode');
+				prevTokenCode.innerHTML = `Code: ${this.props.tokVer.code}`;
+			}
+
+			let verButton = document.getElementById("suVerButton");
+			verButton.classList.remove("button", "is-loading");
+		}
+
+		if(this.props.su.error !== undefined) {
+			if(this.props.su.error !== prevProps.su.error) {
+				let suForm = document.getElementById('suForm');
+	            let suErr = document.createElement("h6");
+	            suErr.innerHTML = `Error: ${this.props.su.error}`;
+	            suErr.style.color = 'red';
+				suErr.setAttribute("id", "suErr");
+				suErr.style.textAlign = 'center';
+	            suForm.appendChild(suErr);
+
+	            let suCode = document.createElement("h6");
+	            suCode.innerHTML = `Code: ${this.props.su.code}`;
+	            suCode.style.color = 'red';
+				suCode.setAttribute("id", "suCode");
+				suCode.style.textAlign = 'center';
+	            suForm.appendChild(suCode);
+			} else {
+				let prevSuErr = document.getElementById('suErr');
+				prevSuErr.innerHTML = `Error: ${this.props.su.error}`;
+				let prevSuCode = document.getElementById('suCode');
+				prevSuCode.innerHTML = `Code: ${this.props.su.code}`;
+			}
+
+			let signupButton = document.getElementById("suButton");
+			signupButton.classList.remove("button", "is-loading");
+		}
+	}
+
 	onSignupVerify = (event) => {
 		event.preventDefault();
 
@@ -29,8 +87,23 @@ class A51 extends Component {
 			username: this.state.username,
 			token: this.state.token
 		}
+
         document.getElementById("username").value = "";
         document.getElementById("token").value = "";
+		if(document.getElementById("tokenErr")) {
+			let err = document.getElementById("tokenErr");
+		    err.parentNode.removeChild(err);
+			let code = document.getElementById("tokenCode");
+		    code.parentNode.removeChild(code);
+		}
+		//loading
+		let element = document.getElementById("suVerButton");
+  		element.classList.add("button", "is-loading");
+
+
+
+		console.log(this.props.tokVer.error);
+
 		this.props.preSignup(tData);
 	}
 
@@ -41,15 +114,29 @@ class A51 extends Component {
             password: this.state.password
         }
 
+		if(document.getElementById("tokenErr")) {
+			let err = document.getElementById("tokenErr");
+		    err.parentNode.removeChild(err);
+			let code = document.getElementById("tokenCode");
+		    code.parentNode.removeChild(code);
+		}
+
         if(this.state.password === this.state.passwordCheck) {
+			//loading
+			let element = document.getElementById("suButton");
+	  		element.classList.add("button", "is-loading");
+
+			console.log(this.props.tokVer.error);
+
             let signUpToken = localStorage.getItem("signUpToken");
             this.props.userSignup(userData, signUpToken, this.handleRedirect);
         } else {
             let objTo = document.getElementById('suForm');
-            let h1 = document.createElement("h4");
-            h1.innerHTML = "Password doesn't match";
-            h1.style.color = 'red';
-            objTo.appendChild(h1);
+            let h4 = document.createElement("h4");
+            h4.innerHTML = "Password doesn't match";
+            h4.style.color = 'red';
+			h4.style.textAlign = 'center';
+            objTo.appendChild(h4);
         }
     }
 
@@ -62,10 +149,11 @@ class A51 extends Component {
 	}
 
 	render() {
+
 		return(
             <div id="login">
 			{
-                this.props.tokVer
+                this.props.tokVer.tokVer
                     ?
                         (
                 				<div className="login-card">
@@ -86,11 +174,9 @@ class A51 extends Component {
                 									<label htmlFor="checkbox"></label>
                 									<span>Remember me(doesnt work 😉)</span>
                 								</div>
-
-                								<a className="btn btn-link level-right" href="#">Forgot Password?</a>
                 							</div>
 
-                							<button type="submit" className="btn btn-primary">Login</button>
+                							<button id="suButton" type="submit" className="btn btn-primary">Verify</button>
                 						</form>
                 					</div>
                 				</div>
@@ -104,12 +190,12 @@ class A51 extends Component {
                 					</div>
 
                 					<div className="content">
-                						<form method='POST' onSubmit={this.onSignupVerify}>
+                						<form id="suForm" method='POST' onSubmit={this.onSignupVerify}>
 
                 							<input id="username" type="text" name="username" title="username" placeholder={"Choose a Username"} required onChange={this.onChange} />
                 							<input id="token" type="text" name="token" title="token" placeholder={"Token"} required onChange={this.onChange} />
 
-                							<button type="submit" className="btn btn-primary">Login</button>
+                							<button id="suVerButton" type="submit" className="btn btn-primary">SignUp</button>
                 						</form>
                 					</div>
                 				</div>

@@ -26,6 +26,11 @@ class Login extends Component {
 			username: this.state.username,
 			password: this.state.password
 		}
+
+		//loading
+		let element = document.getElementById("loButton");
+  		element.classList.add("button", "is-loading");
+
 		this.props.loginUser(loginData, this.handleRedirect)
 	}
 
@@ -63,7 +68,7 @@ class Login extends Component {
 								<a className="btn btn-link level-right" href="#">Forgot Password?</a>
 							</div>
 
-							<button type="submit" className="btn btn-primary">Login</button>
+							<button id="loButton" type="submit" className="btn btn-primary">Login</button>
 						</form>
 					</div>
 				</div>

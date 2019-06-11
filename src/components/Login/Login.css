@@ -107,3 +107,8 @@ label {
 input:focus, select:focus, textarea:focus, button:focus {
 	outline: none;
 }
+
+/* css for A51.js */
+.loader {
+	z-index: 1;
+}

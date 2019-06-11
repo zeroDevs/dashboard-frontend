@@ -11,9 +11,9 @@ import PostLogin from './PostLogin';
 
 class Navbar extends Component {
 
-	componentDidMount() {
-
-	}
+	// componentDidMount() {
+	//
+	// }
 
 	render() {
 
