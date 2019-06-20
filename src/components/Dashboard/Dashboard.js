@@ -22,7 +22,7 @@ class Dashboard extends Component {
 	        						{
 		                                this.props.isLoggedIn && this.props.profile.result !== undefined
 		                                    ? (
-	                                         	<img className="dash-img-size" src={this.props.profile.result.avatar} />
+	                                         	<img className="dash-img-size" alt="profile-img" src={this.props.profile.result.avatar} />
 		                                      )
 		                                    : (
 		                                    	<div className="container-anim-div">
