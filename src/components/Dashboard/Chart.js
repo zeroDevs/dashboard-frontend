@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import RTChart from 'react-rt-chart';
 import socketIOClient from "socket.io-client";
-import '../c3.css';
-import './Dashboard/Dashboard.css';
+import '../../c3.css';
+import './Dashboard.css';
 
 class Chart extends Component {
 
@@ -14,7 +14,6 @@ class Chart extends Component {
 	}
 
 	componentDidMount() {
-		// setInterval(() => this.forceUpdate(), 30000);
 		const socket = socketIOClient("https://apiup.ankuranant.me/");
 		socket.on("FromAPI", data => {
 			console.log(data);

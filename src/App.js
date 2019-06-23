@@ -11,6 +11,9 @@ import SignUp from './components/SignUp';
 import Login from './components/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 import A51 from './components/A51';
+import Chart from './components/Dashboard/Chart';
+import Discord from './components/Dashboard/Discord';
+import Projects from './components/Dashboard/Projects';
 import Footer from './components/Footer';
 
 import store from './store';
@@ -29,6 +32,9 @@ class App extends Component {
 							<Route exact path="/signup" component={SignUp} />
 							<Route exact path="/login" component={Login} />
 							<Route exact path="/dashboard" component={Dashboard} />
+							<Route exact path="/discord" component={Discord} />
+							<Route exact path="/uptimer" component={Chart} />
+							<Route exact path="/projects" component={Projects} />
 							<Route exact path="/nevada/a51" component={A51} />
 						</Switch>
 						<Footer />

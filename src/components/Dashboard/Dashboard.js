@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import  { withRouter } from 'react-router-dom';
-import Chart from '../Chart';
+import DashboardCards from './DashboardCards';
 import { connect } from 'react-redux';
 import './Dashboard.css';
 
@@ -11,7 +11,7 @@ class Dashboard extends Component {
 	}
 
     render() {
-
+		let avatar_url;
         return (
         	<div>
         		{
@@ -20,9 +20,11 @@ class Dashboard extends Component {
         					(
         						<div className="pad has-text-centered">
 	        						{
+
 		                                this.props.isLoggedIn && this.props.profile.result !== undefined
 		                                    ? (
-	                                         	<img className="dash-img-size" alt="profile-img" src={this.props.profile.result.avatar} />
+	                                         	//<img className="dash-img-size" alt="profile-img" src={this.props.profile.result.avatar} />
+												<img className="dash-img-size" alt="profile-img" src="https://robohash.org/test" />
 		                                      )
 		                                    : (
 		                                    	<div className="container-anim-div">
@@ -36,7 +38,7 @@ class Dashboard extends Component {
 												</div>
 		                                      )
 		                            }
-	        						<Chart />
+	        						<DashboardCards profile={this.props.profile} />
 	        					</div>
         					)
         				:

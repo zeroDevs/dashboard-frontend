@@ -15,7 +15,7 @@ export default (state=initialState, action) => {
 				username: action.payload.username
 			}
 		case USER_PROFILE:
-			console.log(action.payload)
+			// console.log(action.payload)
 			return {
 				...state,
 				profile: action.payload

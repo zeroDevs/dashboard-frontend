@@ -49,7 +49,7 @@ class Navbar extends Component {
 			<nav className="navbar is-primary">
 				<div className="navbar-brand">
 					<Link to="/" className="navbar-item">
-						upTimer
+						<img src="https://zerotomastery.io/assets/images/ztm.png" alt="logo" />
 					</Link>
 
 					<span className="navbar-burger burger" data-target="navbarItems">
