@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.mainSection {
+  min-height: 70vh
+}
+
+.text-center {
+  text-align: center
+}
+.text-left {
+  text-align: left
+}
+.realtime {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 30px
+}
+
+.realtime-stat {
+  display: inline-block;
+  border: 1px solid rgba(58, 58, 58, 0.133);
+  padding: 20px 40px;
+  margin: 8px;
+  flex-grow: 1;
+  width: 25vw;
+}
+.realtime-stat h2 {
+  font-size: xx-large;
+  color: goldenrod
+}
+.realtime-stat h2 span {
+  color: rgba(58, 58, 58, 0.133);
+  /* font-size: small; */
+}
+.realtime-stat p {
+  text-transform: uppercase;
+  color: rgba(58, 58, 58, 0.363);
+  font-size: smaller;
+  font-weight: bolder
+}
