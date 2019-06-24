@@ -27,6 +27,7 @@ class App extends Component {
 					<div>
 						<Navbar />
 						<Switch>
+							<div className="mainSection">
 							<Route exact path="/" component={Hero} />
 							<Route exact path="/about" component={About} />
 							<Route exact path="/signup" component={SignUp} />
@@ -36,6 +37,8 @@ class App extends Component {
 							<Route exact path="/uptimer" component={Chart} />
 							<Route exact path="/projects" component={Projects} />
 							<Route exact path="/nevada/a51" component={A51} />
+							</div>
+							
 						</Switch>
 						<Footer />
 					</div>
