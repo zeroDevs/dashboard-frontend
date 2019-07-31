@@ -16,10 +16,6 @@ class A51 extends Component {
             passwordCheck: ''
 		}
 
-		this.onChange = this.onChange.bind(this);
-		this.onSignupVerify = this.onSignupVerify.bind(this);
-        this.onSignup = this.onSignup.bind(this);
-		this.handleRedirect = this.handleRedirect.bind(this);
 	}
 
 	componentDidUpdate(prevProps) {

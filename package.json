@@ -13,6 +13,7 @@
 		"react-scripts": "3.0.1",
 		"react-scroll-to-element": "^0.2.0",
 		"react-unity-webgl": "^7.1.7",
+		"react-vis": "^1.11.7",
 		"redux": "^4.0.1",
 		"redux-thunk": "^2.3.0",
 		"socket.io-client": "^2.2.0",

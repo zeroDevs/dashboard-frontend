@@ -3,7 +3,8 @@ import { LOGIN, USER_PROFILE } from '../actions/types';
 const initialState = {
 	isLoggedIn: false,
 	username: '',
-	profile: {}
+	profile: {},
+	stats: {}
 }
 
 export default (state=initialState, action) => {

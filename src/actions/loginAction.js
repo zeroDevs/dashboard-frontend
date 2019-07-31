@@ -1,7 +1,7 @@
 import { LOGIN, USER_PROFILE } from './types';
 
 export const loginUser = (lData, handleRedirect) => dispatch => {
-	fetch('https://apiup.ankuranant.me/api/login', {
+	fetch('http://localhost:5000/api/login', {
 		method: 'POST',
 		headers: {
 			'content-type': 'application/json'
@@ -26,7 +26,7 @@ export const loginUser = (lData, handleRedirect) => dispatch => {
 
 export const fetchProfile = (username, token) => dispatch => {
 	const bearer = 'Bearer ' + token;
-	fetch(`https://apiup.ankuranant.me/api/${username}/profile`, {
+	fetch(`http://localhost:5000/api/${username}/profile`, {
 		method: 'POST',
 		headers: {
 			'Authorization': bearer,

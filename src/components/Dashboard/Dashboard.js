@@ -6,10 +6,6 @@ import './Dashboard.css';
 
 class Dashboard extends Component {
 
-	componentDidMount() {
-
-	}
-
     render() {
 		let avatar_url;
         return (

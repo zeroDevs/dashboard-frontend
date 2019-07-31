@@ -12,7 +12,7 @@ import Login from './components/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 import A51 from './components/A51';
 import Chart from './components/Dashboard/Chart';
-import Discord from './components/Dashboard/Discord';
+import Discord from './components/Dashboard/Discord/Discord';
 import Projects from './components/Dashboard/Projects';
 import Footer from './components/Footer';
 
@@ -26,20 +26,19 @@ class App extends Component {
 				<Router>
 					<div>
 						<Navbar />
-						<Switch>
 							<div className="mainSection">
-							<Route exact path="/" component={Hero} />
-							<Route exact path="/about" component={About} />
-							<Route exact path="/signup" component={SignUp} />
-							<Route exact path="/login" component={Login} />
-							<Route exact path="/dashboard" component={Dashboard} />
-							<Route exact path="/discord" component={Discord} />
-							<Route exact path="/uptimer" component={Chart} />
-							<Route exact path="/projects" component={Projects} />
-							<Route exact path="/nevada/a51" component={A51} />
+								<Switch>
+									<Route exact path="/" component={Hero} />
+									<Route exact path="/about" component={About} />
+									<Route exact path="/signup" component={SignUp} />
+									<Route exact path="/login" component={Login} />
+									<Route exact path="/dashboard" component={Dashboard} />
+									<Route exact path="/discord" component={Discord} />
+									<Route exact path="/uptimer" component={Chart} />
+									<Route exact path="/projects" component={Projects} />
+									<Route exact path="/nevada/a51" component={A51} />
+								</Switch>
 							</div>
-							
-						</Switch>
 						<Footer />
 					</div>
 				</Router>
