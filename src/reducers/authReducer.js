@@ -1,4 +1,4 @@
-import { LOGIN, USER_PROFILE } from '../actions/types';
+import { LOGIN, USER_PROFILE, DISCORD_STATS } from '../actions/types';
 
 const initialState = {
 	isLoggedIn: false,
@@ -20,6 +20,11 @@ export default (state=initialState, action) => {
 			return {
 				...state,
 				profile: action.payload
+			}
+		case DISCORD_STATS:
+			return {
+				...state,
+				stats: action.payload
 			}
 		default:
 			return state;
