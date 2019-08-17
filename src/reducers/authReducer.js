@@ -1,4 +1,4 @@
-import { LOGIN, USER_PROFILE, DISCORD_STATS } from '../actions/types';
+import { LOGIN, ADMIN_PROFILE, DISCORD_STATS } from '../actions/types';
 
 const initialState = {
 	isLoggedIn: false,
@@ -15,7 +15,7 @@ export default (state=initialState, action) => {
 				isLoggedIn: action.payload.loggedIn,
 				username: action.payload.username
 			}
-		case USER_PROFILE:
+		case ADMIN_PROFILE:
 			// console.log(action.payload)
 			return {
 				...state,

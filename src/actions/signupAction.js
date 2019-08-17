@@ -36,7 +36,8 @@ export const userSignup = (userData, signUpToken, handleRedirect) => dispatch =>
                 payload: data
             });
             if(data.su) {
-                handleRedirect('login')
+                //redirect to login upon successful signup
+                handleRedirect('nevada/a51/login');
             }
         });
 }

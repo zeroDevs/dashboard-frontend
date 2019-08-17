@@ -11,10 +11,6 @@ import PostLogin from './PostLogin';
 
 class Navbar extends Component {
 
-	// componentDidMount() {
-	//
-	// }
-
 	render() {
 
 		document.addEventListener('DOMContentLoaded', () => {
@@ -60,7 +56,7 @@ class Navbar extends Component {
 				</div>
 
 				{
-					this.props.isLoggedIn
+					this.props.isLoggedIn || this.props.isUserLoggedIn
 					?
 					(<PostLogin />)
 					:
@@ -74,11 +70,13 @@ class Navbar extends Component {
 }
 
 Navbar.propTypes = {
-    isLoggedIn: PropTypes.bool.isRequired
+    isLoggedIn: PropTypes.bool.isRequired,
+	isUserLoggedIn: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
-	isLoggedIn: state.auth.isLoggedIn
+	isLoggedIn: state.auth.isLoggedIn,
+	isUserLoggedIn: state.user_auth.isLoggedIn
 })
 
 export default connect(mapStateToProps)(Navbar);

@@ -8,8 +8,11 @@ import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import SignUp from './components/SignUp';
-import Login from './components/Login/Login';
+import UserLogin from './components/NonAdmin/UserLogin';
+import AdminLogin from './components/AdminLogin/Login';
 import Dashboard from './components/Dashboard/Dashboard';
+import UserDashboard from './components/NonAdmin/UserDashboard';
+import CardHolder from './components/NonAdmin/CardHolder';
 import A51 from './components/A51';
 import Chart from './components/Dashboard/Chart';
 import Discord from './components/Dashboard/Discord/Discord';
@@ -31,12 +34,15 @@ class App extends Component {
 									<Route exact path="/" component={Hero} />
 									<Route exact path="/about" component={About} />
 									<Route exact path="/signup" component={SignUp} />
-									<Route exact path="/login" component={Login} />
-									<Route exact path="/dashboard" component={Dashboard} />
+									<Route exact path="/login" component={UserLogin} />
+									<Route exact path="/admin/dashboard" component={Dashboard} />
+									<Route exact path="/dashboard" component={UserDashboard} />
+									<Route path="/project" component={CardHolder} />
 									<Route exact path="/discord" component={Discord} />
 									<Route exact path="/uptimer" component={Chart} />
 									<Route exact path="/projects" component={Projects} />
-									<Route exact path="/nevada/a51" component={A51} />
+									<Route exact path="/nevada/a51/login" component={AdminLogin} />
+									<Route exact path="/nevada/a51/signup" component={A51} />
 								</Switch>
 							</div>
 						<Footer />

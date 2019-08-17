@@ -42,6 +42,18 @@ class Discord extends Component {
           {x: 8, y: 2},
           {x: 9, y: 0}
         ];
+        const data2 = [
+          {x: 0, y: 30},
+          {x: 1, y: 150},
+          {x: 2, y: 60},
+          {x: 3, y: 50},
+          {x: 4, y: 20},
+          {x: 5, y: 70},
+          {x: 6, y: 40},
+          {x: 7, y: 80},
+          {x: 8, y: 0},
+          {x: 9, y: 210}
+        ];
         const MsgChartProps = {
             animtion: true,
             onNearestXY: msgValue => this.setState({msgValue}),
@@ -52,14 +64,14 @@ class Discord extends Component {
             animtion: true,
             onNearestXY: memValue => this.setState({memValue}),
             curve: 'curveMonotoneX',
-            data
+            data: data2
         }
         return(
                 <section className="section">
                     <div className="container">
                         <h1 className="title has-text-centered">Discord Stats</h1>
                         <div className="has-text-centered">
-                            <button className="button is-outlined is-primary is-rounded">Daily Stats</button>
+                            <button className="button is-outlined is-primary is-rounded">Weekly Stats</button>
                             <button className="button is-outlined is-primary is-rounded">Monthly Stats</button>
                         </div>
                         <hr />
@@ -81,7 +93,7 @@ class Discord extends Component {
                                     height={400}
                                     onMouseLeave={() => this.setState({memValue: false})}>
                                     <XAxis title="time" />
-                                    <YAxis title="messages"/>
+                                    <YAxis title="members"/>
                                     <LineMarkSeries {...MemChartProps} />
                                     {this.state.memValue ? <Hint value={this.state.memValue} /> : null}
                                 </XYPlot>

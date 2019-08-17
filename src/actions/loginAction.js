@@ -1,7 +1,7 @@
-import { LOGIN, USER_PROFILE } from './types';
+import { LOGIN, ADMIN_PROFILE } from './types';
 
 export const loginUser = (lData, handleRedirect) => dispatch => {
-	fetch('http://localhost:5000/api/login', {
+	fetch('https://apiup.ankuranant.me/api/login', {
 		method: 'POST',
 		headers: {
 			'content-type': 'application/json'
@@ -17,16 +17,16 @@ export const loginUser = (lData, handleRedirect) => dispatch => {
 					type: LOGIN,
 					payload: data
 				});
-				handleRedirect('dashboard');
+				handleRedirect('admin/dashboard');
 			} else {
-				handleRedirect('login');
+				handleRedirect('nevada/a51/login');
 			}
 		});
 }
 
 export const fetchProfile = (username, token) => dispatch => {
 	const bearer = 'Bearer ' + token;
-	fetch(`http://localhost:5000/api/${username}/profile`, {
+	fetch(`https://apiup.ankuranant.me/api/${username}/profile`, {
 		method: 'POST',
 		headers: {
 			'Authorization': bearer,
@@ -36,7 +36,7 @@ export const fetchProfile = (username, token) => dispatch => {
 		.then(res => res.json())
 		.then(data => {
 			dispatch({
-				type: USER_PROFILE,
+				type: ADMIN_PROFILE,
 				payload: data
 			})
 		})
