@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { dStats } from '../../../actions/DashboardAction.js';
-import '../../../../node_modules/react-vis/dist/style.css';
+import '../../../style.css';
 import {
     XYPlot,
     XAxis,
