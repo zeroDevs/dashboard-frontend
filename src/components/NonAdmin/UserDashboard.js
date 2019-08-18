@@ -11,7 +11,7 @@ if(key == null) {
     console.log('no token');
 } else {
     localStorage.setItem("dToken", key);
-    window.location = "http://localhost:3000/dashboard"
+    window.location = "https://dash.zerobot.xyz/dashboard"
 }
 
 class UserDashboard extends Component {
