@@ -46,7 +46,7 @@ class UserDashboard extends Component {
 
     render() {
         return (
-        	<div className="container">
+        	<div>
         		{
         			this.props.isLoggedIn
         				?
