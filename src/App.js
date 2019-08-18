@@ -35,7 +35,7 @@ class App extends Component {
 									<Route exact path="/about" component={About} />
 									<Route exact path="/signup" component={SignUp} />
 									<Route exact path="/login" component={UserLogin} />
-									<Route exact path="/admin/dashboard" component={Dashboard} />
+									<Route exact path="/admin" component={Dashboard} />
 									<Route exact path="/dashboard" component={UserDashboard} />
 									<Route path="/project" component={CardHolder} />
 									<Route exact path="/discord" component={Discord} />

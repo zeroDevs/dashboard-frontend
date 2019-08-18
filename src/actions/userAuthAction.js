@@ -2,6 +2,7 @@ import {USER_LOGIN, USER_PROFILE, PROJ_PAY_FORM} from './types';
 
 export const fetchUserProfile = (token, handleRedirect) => dispatch => {
     const bearer = 'Bearer ' + token;
+    console.log('profile ping');
     fetch(`https://apiup.ankuranant.me/api/user/profile`, {
         method: 'POST',
         headers: {
@@ -16,7 +17,7 @@ export const fetchUserProfile = (token, handleRedirect) => dispatch => {
                     type: USER_PROFILE,
                     payload: data
                 });
-                // console.log(data);
+                console.log(data);
                 handleRedirect('dashboard');
             } else {
                 handleRedirect('login');

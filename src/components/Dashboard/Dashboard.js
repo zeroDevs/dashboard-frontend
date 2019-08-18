@@ -7,7 +7,7 @@ import './Dashboard.css';
 class Dashboard extends Component {
 
     render() {
-		let avatar_url;
+		// let avatar_url;
         return (
         	<div>
         		{

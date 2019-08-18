@@ -66,6 +66,10 @@ class CardHolder extends Component {
 
     onChange = (event) => {
         this.setState({[event.target.name]: event.target.value});
+        if(document.getElementById("subErr")) {
+			let err = document.getElementById("subErr");
+		    err.parentNode.removeChild(err);
+		}
     }
 
     handleRedirect = (path) => {

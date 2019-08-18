@@ -11,19 +11,32 @@ if(key == null) {
     console.log('no token');
 } else {
     localStorage.setItem("dToken", key);
-    window.location = "https://dash.zerobot.xyz/dashboard"
+    window.location = "http://localhost:3000/dashboard"
 }
 
 class UserDashboard extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            data: null
+        }
     }
 
     componentDidMount() {
         const localToken = localStorage.getItem('dToken');
-        if(localToken != null) {
-            this.props.fetchUserProfile(localToken, this.handleRedirect)
+        if(localToken != null && !this.props.isLoggedIn) {
+            console.log("pinggg");
+            this.props.fetchUserProfile(localToken, this.handleRedirect);
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+		console.log(this.props.isLoggedIn === prevProps.isLoggedIn);
+        console.log(this.props.username);
+        console.log( prevProps.username);
+        if(prevProps.username === undefined) {
+            this.setState({data: this.props.profile});
         }
     }
 
@@ -42,7 +55,7 @@ class UserDashboard extends Component {
 
 	        						{
 
-		                                this.props.isLoggedIn && this.props.profile !== undefined
+		                                this.props.isLoggedIn && this.props.profile !== null
 		                                    ? (
                                                 <>
 												<img className="dash-img-size" alt="profile-img" src={`https://robohash.org/${this.props.profile.username}`} />
@@ -66,7 +79,7 @@ class UserDashboard extends Component {
         					)
         				:
         					(
-                                localStorage.getItem('dToken') == null
+                                localStorage.getItem('dToken') === null && this.state.data === null
                                     ?   (
                     						<section className="hero is-medium is-primary">
             								  	<div className="hero-body">
