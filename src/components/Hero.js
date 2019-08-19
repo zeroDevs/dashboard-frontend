@@ -9,7 +9,7 @@ const Hero = () => {
 						Zero To Mastery
 					</h1>
 					<p className="title title-m">
-						Management stuff
+						Student Dashboard
 					</p>
 				</div>
 			</div>

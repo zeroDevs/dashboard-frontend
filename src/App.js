@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
+import Support from './components/Support';
 import SignUp from './components/SignUp';
 import UserLogin from './components/NonAdmin/UserLogin';
 import AdminLogin from './components/AdminLogin/Login';
@@ -32,7 +32,7 @@ class App extends Component {
 							<div className="mainSection">
 								<Switch>
 									<Route exact path="/" component={Hero} />
-									<Route exact path="/about" component={About} />
+									<Route exact path="/support" component={Support} />
 									<Route exact path="/signup" component={SignUp} />
 									<Route exact path="/login" component={UserLogin} />
 									<Route exact path="/admin" component={Dashboard} />

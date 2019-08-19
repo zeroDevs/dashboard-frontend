@@ -17,7 +17,7 @@ export const loginUser = (lData, handleRedirect) => dispatch => {
 					type: LOGIN,
 					payload: data
 				});
-				handleRedirect('admin/dashboard');
+				handleRedirect('admin');
 			} else {
 				handleRedirect('nevada/a51/login');
 			}
