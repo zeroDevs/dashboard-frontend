@@ -38,7 +38,7 @@ class UserDashboardCards extends Component {
                     <div className="cards" key="1">
                         <div className="card-item">
                             <div className="card-image">
-                                <img src="https://cdn.pixabay.com/photo/2016/12/22/13/35/analytics-1925495_960_720.png" alt="b-gen" />
+                                <img src="https://cdn.pixabay.com/photo/2016/08/12/05/06/technology-1587673_960_720.jpg" alt="b-gen" />
                             </div>
                             <div className="card-info">
                                 <h2 className="card-title">
@@ -46,7 +46,7 @@ class UserDashboardCards extends Component {
                                         Project Live
                                     </Link>
                                 </h2><br />
-                                <h2 className="card-intro">a paycheck-to-paycheck breakdown of income and expenses</h2>
+                                <h2 className="card-intro">Your own personal streaming server</h2>
                             </div>
                         </div>
                     </div>
