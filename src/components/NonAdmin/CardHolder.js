@@ -119,7 +119,7 @@ class CardHolder extends Component {
                                             <input id="username" disabled type="text" name="username" title="username" value={this.props.username+'#'+this.props.profile.discriminator} required onChange={this.onChange} />
                 							<p><b>Email</b>(with which you registered on notion.so)</p>
                                             <input id="password" type="email" name="email" title="email" placeholder={"Email"} required onChange={this.onChange} />
-                                            <p><b>Disclaimer:- </b> Email will be used just for notion.so invitation</p>
+                                            <p><b>Privacy Policy:- </b> Email will be used just for notion.so invitation</p>
 
 
                 							<button id="subButton" type="submit" className="btn btn-primary">Submit</button>
