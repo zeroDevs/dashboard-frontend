@@ -1,10 +1,11 @@
-import { USER_LOGIN, USER_PROFILE, PROJ_PAY_FORM } from '../actions/types';
+import { USER_LOGIN, USER_PROFILE, PROJ_PAY_FORM, PROJ_LIVE_FORM } from '../actions/types';
 
 const initialState = {
     isLoggedIn: false,
     username: '',
     profile: {},
-    projPayForm: null
+    projPayForm: null,
+    projLive: null
 }
 
 export default (state=initialState, action) => {
@@ -26,6 +27,11 @@ export default (state=initialState, action) => {
             return {
                 ...state,
                 projPayForm: action.payload
+            }
+        case PROJ_LIVE_FORM:
+            return {
+                ...state,
+                projLive: action.payload
             }
         default:
             return state;

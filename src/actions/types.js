@@ -6,3 +6,4 @@ export const DISCORD_STATS = 'DISCORD_STATS';
 export const USER_LOGIN = 'USER_LOGIN';
 export const USER_PROFILE = 'USER_PROFILE';
 export const PROJ_PAY_FORM = 'PROJ_PAY_FORM';
+export const PROJ_LIVE_FORM = 'PROJ_LIVE_FORM';

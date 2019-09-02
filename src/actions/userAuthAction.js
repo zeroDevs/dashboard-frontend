@@ -1,4 +1,4 @@
-import {USER_LOGIN, USER_PROFILE, PROJ_PAY_FORM} from './types';
+import { USER_LOGIN, USER_PROFILE, PROJ_PAY_FORM, PROJ_LIVE_FORM } from './types';
 
 export const fetchUserProfile = (token, handleRedirect) => dispatch => {
     const bearer = 'Bearer ' + token;
@@ -39,6 +39,26 @@ export const ppform = (token, projectData, handleRedirect) => dispatch => {
         .then(data => {
             dispatch({
                 type: PROJ_PAY_FORM,
+                payload: data
+            });
+        });
+}
+
+// temp action
+export const pLiveForm = (token, projectData, handleRedirect) => dispatch => {
+    const bearer = 'Bearer ' + token;
+    fetch(`https://apiup.ankuranant.me/api/user/project/projectlive`, {
+        method: 'POST',
+        headers: {
+            'Authorization': bearer,
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(projectData)
+    })
+        .then(res => res.json())
+        .then(data => {
+            dispatch({
+                type: PROJ_LIVE_FORM,
                 payload: data
             });
         });

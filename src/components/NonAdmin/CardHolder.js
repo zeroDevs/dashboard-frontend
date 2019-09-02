@@ -3,13 +3,32 @@ import '../AdminLogin/Login.css';
 import { connect } from 'react-redux';
 import { ppform } from '../../actions/userAuthAction';
 
+if(document.getElementById("subErr")) {
+    let err = document.getElementById("subErr");
+    err.parentNode.removeChild(err);
+}
+
+
 class CardHolder extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             username: '',
-            email: ''
+            email: '',
+            project: ''
+        }
+    }
+
+    componentDidMount() {
+        const urlParams = new URLSearchParams(window.location.search);
+        console.log(urlParams.get('p'));
+        switch(urlParams.get('p')) {
+            case 'projpaycheck':
+                this.setState({project: 'Project_Paycheck'});
+                return;
+            case 'projlive':
+                this.setState({project: 'Project_Live'});
         }
     }
 
@@ -42,12 +61,20 @@ class CardHolder extends Component {
         }
     }
 
+    componentWillUnmount() {
+        if(document.getElementById("subErr")) {
+			let err = document.getElementById("subErr");
+		    err.parentNode.removeChild(err);
+		}
+    }
+
     onSubmit = (event) => {
         event.preventDefault();
 
         const projectData = {
             username: this.props.username+'#'+this.props.profile.discriminator,
-            email: this.state.email
+            email: this.state.email,
+            project: this.state.project
         }
 
         if(document.getElementById("subErr")) {
