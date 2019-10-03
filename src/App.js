@@ -7,15 +7,9 @@ import { Provider } from 'react-redux';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero';
 import Support from './components/Support';
-// import SignUp from './components/SignUp';
 import UserLogin from './components/NonAdmin/UserLogin';
-// import AdminLogin from './components/AdminLogin/Login';
-// import Dashboard from './components/Dashboard/Dashboard';
 import UserDashboard from './components/NonAdmin/UserDashboard';
 import CardHolder from './components/NonAdmin/CardHolder';
-// import A51 from './components/A51';
-// import Chart from './components/Dashboard/Chart';
-// import Discord from './components/Dashboard/Discord/Discord';
 import Projects from './components/Dashboard/Projects';
 import Footer from './components/Footer';
 
