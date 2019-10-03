@@ -6,7 +6,7 @@ const Support = () => {
     <div className="container">
       <h1 className="title">Support</h1><br />
       <h2 className="subtitle">
-	  	For issues/concern regarding this website contact <b><i>notAnkur#6968</i></b> on discord;
+	  	For issues/concern regarding this website ping <b><i>notAnkur#6968</i></b> on discord;
       </h2>
     </div>
   </section>
