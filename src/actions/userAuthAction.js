@@ -3,7 +3,7 @@ import { USER_LOGIN, USER_PROFILE, PROJ_PAY_FORM, PROJ_LIVE_FORM } from './types
 export const fetchUserProfile = (token, handleRedirect) => dispatch => {
     const bearer = 'Bearer ' + token;
     console.log('profile ping');
-    fetch(`https://apiup.ankuranant.me/api/user/profile`, {
+    fetch(`https://adminapi.ankuranant.dev/api/user/profile`, {
         method: 'POST',
         headers: {
             'Authorization': bearer,
@@ -27,7 +27,7 @@ export const fetchUserProfile = (token, handleRedirect) => dispatch => {
 
 export const ppform = (token, projectData, handleRedirect) => dispatch => {
     const bearer = 'Bearer ' + token;
-    fetch(`https://apiup.ankuranant.me/api/user/project/projpaycheck`, {
+    fetch(`https://adminapi.ankuranant.dev/api/user/project/projpaycheck`, {
         method: 'POST',
         headers: {
             'Authorization': bearer,
@@ -47,7 +47,7 @@ export const ppform = (token, projectData, handleRedirect) => dispatch => {
 // temp action
 export const pLiveForm = (token, projectData, handleRedirect) => dispatch => {
     const bearer = 'Bearer ' + token;
-    fetch(`https://apiup.ankuranant.me/api/user/project/projectlive`, {
+    fetch(`https://adminapi.ankuranant.dev/api/user/project/projectlive`, {
         method: 'POST',
         headers: {
             'Authorization': bearer,

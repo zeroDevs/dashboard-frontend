@@ -1,7 +1,7 @@
 import { PRESIGNUP, SIGNUP } from './types';
 
 export const preSignup = (inpData) => dispatch => {
-    fetch('http://localhost:5000/api/signup/verify', {
+    fetch('https://adminapi.ankuranant.dev/api/signup/verify', {
         method: 'POST',
         headers: {
 			'content-type': 'application/json'
@@ -20,7 +20,7 @@ export const preSignup = (inpData) => dispatch => {
 
 export const userSignup = (userData, signUpToken, handleRedirect) => dispatch => {
     const vToken = 'Bearer ' + signUpToken;
-    fetch('http://localhost:5000/api/signup', {
+    fetch('https://adminapi.ankuranant.dev/api/signup', {
         method: 'POST',
         headers: {
             'Authorization': vToken,

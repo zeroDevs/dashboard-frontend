@@ -2,7 +2,7 @@ import { DISCORD_STATS } from './types';
 
 export const dStats = (date, token) => dispatch => {
     const userToken = 'Bearer ' + token;
-    fetch(`http://localhost:5000/api/stats/${date}`, {
+    fetch(`https://adminapi.ankuranant.dev/api/stats/${date}`, {
         method: 'POST',
         headers: {
             'Authorization': userToken,

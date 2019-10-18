@@ -50,7 +50,7 @@ class UserLogin extends Component {
 					</div>
 
 					<div className="content">
-                        <a href="https://apiup.ankuranant.me/api/user/login"><button id="loButton" type="submit" className="btn btn-primary">Login with Discord</button></a>
+                        <a href="https://adminapi.ankuranant.dev/api/user/login"><button id="loButton" type="submit" className="btn btn-primary">Login with Discord</button></a>
 					</div>
 				</div>
 			</div>
