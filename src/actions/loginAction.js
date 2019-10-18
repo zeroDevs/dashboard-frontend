@@ -1,7 +1,7 @@
 import { LOGIN, ADMIN_PROFILE } from './types';
 
 export const loginUser = (lData, handleRedirect) => dispatch => {
-	fetch('https://apiup.ankuranant.me/api/login', {
+	fetch('https://adminapi.ankuranant.dev/api/login', {
 		method: 'POST',
 		headers: {
 			'content-type': 'application/json'
