@@ -42,7 +42,7 @@ class PostLogin extends Component {
             console.log('logout');
 
             // this.setState({uName: "..."});
-            this.forceUodate();
+            this.forceUpdate();
         }
 
     }
